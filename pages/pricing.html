@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | The Friendly Couch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8', // Purple color from the original site
+                        secondary: '#F9A826', // Accent color
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center">
+                <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="../index.html" class="font-medium hover:text-primary transition">Home</a>
+                <a href="therapy.html" class="font-medium hover:text-primary transition">Therapy</a>
+                <a href="diagnosis.html" class="font-medium hover:text-primary transition">Diagnosis</a>
+                <a href="pricing.html" class="text-primary font-medium hover:text-secondary transition">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium hover:text-primary transition">Couple's Counselling</a>
+                <a href="about.html" class="font-medium hover:text-primary transition">About</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Book Session Button -->
+            <a href="booking.html" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">Book a Session</a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="../index.html" class="font-medium py-2 hover:bg-light px-4 rounded">Home</a>
+                <a href="therapy.html" class="font-medium py-2 hover:bg-light px-4 rounded">Therapy</a>
+                <a href="diagnosis.html" class="font-medium py-2 hover:bg-light px-4 rounded">Diagnosis</a>
+                <a href="pricing.html" class="text-primary font-medium py-2 hover:bg-light px-4 rounded">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium py-2 hover:bg-light px-4 rounded">Couple's Counselling</a>
+                <a href="about.html" class="font-medium py-2 hover:bg-light px-4 rounded">About</a>
+                <a href="contact.html" class="font-medium py-2 hover:bg-light px-4 rounded">Contact</a>
+                <a href="booking.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition text-center">Book a Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Our Pricing</h1>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">Transparent and affordable pricing for quality mental health care. Invest in your well-being with our experienced therapists.</p>
+        </div>
+    </section>
+
+    <!-- Main Pricing Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Standard Session Charges</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Counselling Psychologist Plan -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+                    <div class="bg-primary p-6 text-white text-center">
+                        <h3 class="text-2xl font-bold">Counselling Psychologist</h3>
+                    </div>
+                    <div class="p-8 text-center">
+                        <div class="text-4xl font-bold text-primary mb-4">₹2300</div>
+                        <p class="text-gray-600 mb-8">per session</p>
+                        
+                        <ul class="space-y-4 text-left mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>45-50 minute session</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Conducted by an experienced Counselling Psychologist</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Secure online video/audio call</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Personalized therapy approach</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Post-session resources as needed</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="booking.html" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-secondary transition inline-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Clinical Psychologist Plan -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+                    <div class="bg-primary p-6 text-white text-center">
+                        <h3 class="text-2xl font-bold">Clinical Psychologist</h3>
+                    </div>
+                    <div class="p-8 text-center">
+                        <div class="text-4xl font-bold text-primary mb-4">₹2700</div>
+                        <p class="text-gray-600 mb-8">per session</p>
+                        
+                        <ul class="space-y-4 text-left mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>45-50 minute session</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Conducted by a Clinical Psychologist with advanced training</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Secure online video/audio call</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Suitable for more complex mental health concerns</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Diagnostic assessments available</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Post-session resources and action plan</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="booking.html" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-secondary transition inline-block">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Services Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Specialized Services</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Couples Counselling -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-user-friends text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Couples Counselling</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Address relationship challenges with our specialized couples therapy sessions.</p>
+                    <div class="text-xl font-bold text-primary mb-4">₹3000</div>
+                    <p class="text-gray-500 text-sm mb-4">60-minute session</p>
+                    <a href="couples-counselling.html" class="text-primary hover:text-secondary transition">Learn More →</a>
+                </div>
+                
+                <!-- Diagnostic Assessment -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-clipboard-check text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Diagnostic Assessment</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Comprehensive evaluation by a Clinical Psychologist, includes written report.</p>
+                    <div class="text-xl font-bold text-primary mb-4">₹5000</div>
+                    <p class="text-gray-500 text-sm mb-4">3-4 hour process (over multiple sessions)</p>
+                    <a href="diagnosis.html" class="text-primary hover:text-secondary transition">Learn More →</a>
+                </div>
+                
+                <!-- Group Therapy -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-users text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Group Therapy</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Join our supportive group sessions focused on specific concerns like anxiety or grief.</p>
+                    <div class="text-xl font-bold text-primary mb-4">₹1200</div>
+                    <p class="text-gray-500 text-sm mb-4">90-minute group session</p>
+                    <a href="therapy.html" class="text-primary hover:text-secondary transition">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment & Packages Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Payment Options -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Payment Options</h2>
+                    <p class="text-lg mb-6">We offer multiple convenient payment methods to make your therapy journey smooth and hassle-free.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fas fa-credit-card text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium mb-2">Online Payment</h3>
+                                <p class="text-gray-600">We accept payments via UPI, net banking, and all major credit/debit cards.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fas fa-money-bill-wave text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium mb-2">Bank Transfer</h3>
+                                <p class="text-gray-600">Direct bank transfer details will be provided upon session confirmation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fas fa-calendar-alt text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium mb-2">Payment Timing</h3>
+                                <p class="text-gray-600">Payment is required at least 24 hours before your scheduled session.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Session Packages -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Session Packages</h2>
+                    <p class="text-lg mb-6">Save with our multi-session packages and commit to your mental health journey.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-light p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2">4-Session Package</h3>
+                            <p class="mb-2">Book 4 sessions in advance and save 5% on the total cost.</p>
+                            <p class="text-primary font-bold">5% Discount</p>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2">8-Session Package</h3>
+                            <p class="mb-2">Book 8 sessions in advance and save 10% on the total cost.</p>
+                            <p class="text-primary font-bold">10% Discount</p>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2">12-Session Package</h3>
+                            <p class="mb-2">Book 12 sessions in advance and save 15% on the total cost.</p>
+                            <p class="text-primary font-bold">15% Discount</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancellation Policy Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Cancellation & Rescheduling Policy</h2>
+            
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-calendar-times text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium mb-2">24-Hour Notice</h3>
+                            <p class="text-gray-600">We request a 24-hour notice for cancellation or rescheduling. This allows us to offer the slot to someone else who might need it.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-sync-alt text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium mb-2">Rescheduling</h3>
+                            <p class="text-gray-600">Sessions can be rescheduled once without any charges if done with at least 24 hours' notice. Any subsequent rescheduling may incur a fee.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium mb-2">Late Cancellation</h3>
+                            <p class="text-gray-600">Cancellations with less than 24 hours' notice will be charged the full session fee. This policy helps us maintain our commitment to all clients.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-user-clock text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium mb-2">Late Arrival</h3>
+                            <p class="text-gray-600">If you're running late, please inform us. Sessions cannot be extended beyond the scheduled time, as it may affect other appointments.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-heart text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium mb-2">Emergencies</h3>
+                            <p class="text-gray-600">We understand that emergencies happen. In case of genuine emergencies, exceptions to the cancellation policy may be considered on a case-by-case basis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Do you provide receipts for insurance claims?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Yes, we provide receipts that you can submit to your insurance provider for reimbursement. However, we recommend checking with your insurance company beforehand to understand their coverage policies for mental health services.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Are there any hidden charges?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">No, there are no hidden charges. The prices listed are all-inclusive. You'll only pay for additional services if you opt for them, such as diagnostic assessments or written reports, which will be clearly communicated in advance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">How often should I schedule sessions?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">The frequency of sessions depends on your individual needs and goals. Initially, weekly sessions are often recommended. As you progress, the frequency may decrease to bi-weekly or monthly. Your therapist will discuss and recommend the most appropriate schedule for you.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Do you offer sliding scale fees?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">We have limited slots available at reduced rates for clients with financial constraints. Please contact us directly to discuss your situation and check availability for sliding scale fees.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">What's the difference between a Counselling and Clinical Psychologist?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Counselling Psychologists typically focus on helping people with everyday issues such as stress, relationships, and personal growth. Clinical Psychologists have additional training in assessing, diagnosing, and treating more complex mental health conditions. Both are qualified mental health professionals, but their training and focus areas differ slightly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Your Session Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin Your Therapy Journey?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Invest in your mental health and well-being today. Our team of qualified therapists is here to support you.</p>
+            <a href="booking.html" class="bg-white text-primary px-8 py-3 rounded-full text-lg hover:bg-secondary hover:text-white transition inline-block">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Friendly Couch</h3>
+                    <p class="mb-6">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="therapy.html" class="hover:text-secondary transition">Therapy</a></li>
+                        <li><a href="diagnosis.html" class="hover:text-secondary transition">Diagnosis</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition">Pricing</a></li>
+                        <li><a href="couples-counselling.html" class="hover:text-secondary transition">Couple's Counselling</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-instagram mr-2"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span>+91 9205025183</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 mt-8 pt-8 text-center">
+                <p>&copy; 2023 The Friendly Couch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
