@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Friendly Couch | Mental Health Therapy & Counselling</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8', // Purple color from the original site
+                        secondary: '#F9A826', // Accent color
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-primary font-medium hover:text-secondary transition">Home</a>
+                <a href="pages/therapy.html" class="font-medium hover:text-primary transition">Therapy</a>
+                <a href="pages/diagnosis.html" class="font-medium hover:text-primary transition">Diagnosis</a>
+                <a href="pages/pricing.html" class="font-medium hover:text-primary transition">Pricing</a>
+                <a href="pages/couples-counselling.html" class="font-medium hover:text-primary transition">Couple's Counselling</a>
+                <a href="pages/about.html" class="font-medium hover:text-primary transition">About</a>
+                <a href="pages/contact.html" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Book Session Button -->
+            <a href="pages/booking.html" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">Book a Session</a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="text-primary font-medium py-2 hover:bg-light px-4 rounded">Home</a>
+                <a href="pages/therapy.html" class="font-medium py-2 hover:bg-light px-4 rounded">Therapy</a>
+                <a href="pages/diagnosis.html" class="font-medium py-2 hover:bg-light px-4 rounded">Diagnosis</a>
+                <a href="pages/pricing.html" class="font-medium py-2 hover:bg-light px-4 rounded">Pricing</a>
+                <a href="pages/couples-counselling.html" class="font-medium py-2 hover:bg-light px-4 rounded">Couple's Counselling</a>
+                <a href="pages/about.html" class="font-medium py-2 hover:bg-light px-4 rounded">About</a>
+                <a href="pages/contact.html" class="font-medium py-2 hover:bg-light px-4 rounded">Contact</a>
+                <a href="pages/booking.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition text-center">Book a Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">You deserve a better you</h1>
+                    <h2 class="text-3xl md:text-4xl font-semibold mb-6">We'll help you get there</h2>
+                    <p class="text-lg mb-8">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <a href="pages/booking.html" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition inline-block">Book a Session</a>
+                </div>
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/6127616/pexels-photo-6127616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Therapy Couch" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Overview Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">OUR STANDARD CHARGES</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Counselling Psychologist</h3>
+                    <p class="text-3xl font-bold text-primary mb-2">₹2300</p>
+                    <p class="text-gray-600">per session</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Clinical Psychologist</h3>
+                    <p class="text-3xl font-bold text-primary mb-2">₹2700</p>
+                    <p class="text-gray-600">per session</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <h3 class="text-xl font-medium mb-6">For more information visit</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="pages/therapy.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">THERAPY</a>
+                    <a href="pages/diagnosis.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">DIAGNOSIS</a>
+                    <a href="pages/pricing.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">PRICING</a>
+                    <a href="pages/couples-counselling.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">COUPLE'S COUNSELLING</a>
+                </div>
+                <div class="mt-8">
+                    <p class="text-lg font-medium mb-4">OR</p>
+                    <h3 class="text-2xl font-semibold mb-6">Message Us and Book Your Session</h3>
+                    <div class="flex justify-center gap-6">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">WHAT WE DO</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg mb-6">With so many different types of professionals (and quacks) in the field, how does one know who to choose?</p>
+                <p class="text-lg mb-8">This is where we help. We only work with friendly & non-judgmental therapists that have the right qualifications.</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <a href="pages/therapy.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">THERAPY</a>
+                    <a href="pages/diagnosis.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">DIAGNOSIS</a>
+                    <a href="pages/pricing.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">PRICING</a>
+                    <a href="pages/couples-counselling.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">COUPLE'S COUNSELLING</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2">EACH NUMBER HOLDS A STORY</h2>
+            <h3 class="text-xl font-medium text-center mb-8">These numbers represent people who have started their mental health journey with us, one step at a time.</h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
+                <div class="stat-item">
+                    <p class="text-4xl font-bold mb-2">9+</p>
+                    <p class="text-xl">Languages</p>
+                </div>
+                <div class="stat-item">
+                    <p class="text-4xl font-bold mb-2">15+</p>
+                    <p class="text-xl">Therapists</p>
+                </div>
+                <div class="stat-item">
+                    <p class="text-4xl font-bold mb-2">5000+</p>
+                    <p class="text-xl">Clients</p>
+                </div>
+                <div class="stat-item">
+                    <p class="text-4xl font-bold mb-2">25000+</p>
+                    <p class="text-xl">Sessions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">EVERYONE IS WELCOME HERE</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg mb-6">Each person has a story. These stories shape us and make us who we are. We at The Friendly Couch see people without bias and judgment.</p>
+                    <p class="text-xl font-medium">Always.</p>
+                </div>
+                <div>
+                    <img src="https://images.pexels.com/photos/3184419/pexels-photo-3184419.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Diverse People" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+            
+            <!-- Testimonial -->
+            <div class="max-w-3xl mx-auto mt-16 bg-gray-100 rounded-lg p-8 relative">
+                <div class="absolute -top-6 left-8 text-primary">
+                    <i class="fas fa-quote-left text-5xl"></i>
+                </div>
+                <p class="text-lg italic mb-6 pt-4">Thanks to your organization, which understands our Indian culture well and comprehends how the lack of awareness and information about various mental health issues impacts India. Therapy isn't a Western concept; Indians just haven't recognized it.</p>
+                <p class="font-medium">Someone we made happy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">LANGUAGES THAT CONNECT US</h2>
+            <p class="text-lg text-center mb-12">We offer sessions in a variety of languages for your comfort.</p>
+            
+            <div class="grid grid-cols-3 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">EN</span>
+                    </div>
+                    <p>English</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">HI</span>
+                    </div>
+                    <p>Hindi</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">GU</span>
+                    </div>
+                    <p>Gujarati</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">TE</span>
+                    </div>
+                    <p>Telugu</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">TA</span>
+                    </div>
+                    <p>Tamil</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">ML</span>
+                    </div>
+                    <p>Malayalam</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">PB</span>
+                    </div>
+                    <p>Punjabi</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">KN</span>
+                    </div>
+                    <p>Kannada</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">BN</span>
+                    </div>
+                    <p>Bengali</p>
+                </div>
+                <div class="language-item text-center">
+                    <div class="bg-white rounded-full p-4 mb-3 shadow-md mx-auto w-20 h-20 flex items-center justify-center">
+                        <span class="text-2xl font-bold">+</span>
+                    </div>
+                    <p>More</p>
+                </div>
+            </div>
+            
+            <!-- Testimonial -->
+            <div class="max-w-3xl mx-auto mt-16 bg-primary text-white rounded-lg p-8 relative">
+                <div class="absolute -top-6 left-8 text-white">
+                    <i class="fas fa-quote-left text-5xl"></i>
+                </div>
+                <p class="text-lg italic mb-6 pt-4">Before starting the therapy, I thought I wouldn't be comfortable talking if it's not in Punjabi. But actually, that wasn't the case. I was pretty comfortable in Hindi and English, and I loved how my therapist made me feel so comfortable in every session. Just the knowledge that my therapist understands Punjabi was enough to boost my confidence to speak in Hindi and English.</p>
+                <p class="font-medium">Someone we made happy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Note -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">FOUNDER'S NOTE</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+                <div>
+                    <img src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Founder Image" class="w-full h-auto rounded-lg shadow-lg">
+                    <p class="text-center mt-4 font-medium">Divija Bhasin</p>
+                    <p class="text-center text-gray-600">Counselling Psychologist</p>
+                </div>
+                <div>
+                    <p class="text-lg mb-6">Growing up, I saw people around me struggle with their mental health. I knew that it was hard but realized that it was even more challenging without professional support.</p>
+                    <p class="text-lg font-medium mb-6">Nothing can replace therapy.</p>
+                    <p class="text-lg mb-6">Helping people with their mental health journey is not just my profession, it's also personal for me. The Friendly Couch started as an idea when I was just a kid. I'm thrilled that I am finally doing it!</p>
+                    <p class="text-lg mb-8">Get to know me, The Friendly Couch, and my team of therapists.</p>
+                    <a href="pages/about.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition inline-block">About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Concerns Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">CONCERNS WE WORK WITH</h2>
+            <p class="text-lg text-center mb-12">We're here to support you through a wide range of challenges:</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-brain text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">ANXIETY</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-wind text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">STRESS</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-user-friends text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">RELATIONSHIPS</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-bolt text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">ADHD</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-heart-broken text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">TRAUMA</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-cloud-rain text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">DEPRESSION</h3>
+                </div>
+            </div>
+            
+            <p class="text-center mt-8 text-lg italic">…and the list is not limited to these!</p>
+            
+            <!-- Testimonial -->
+            <div class="max-w-3xl mx-auto mt-16 bg-primary text-white rounded-lg p-8 relative">
+                <div class="absolute -top-6 left-8 text-white">
+                    <i class="fas fa-quote-left text-5xl"></i>
+                </div>
+                <p class="text-lg italic mb-6 pt-4">Spot on. She steers me into my darkest moments to open up with ease. She explains the dos and don'ts of handling overwhelming emotions and advises on not easily giving in to guilt tripping myself. That's the most one would need to hear after a session.</p>
+                <p class="font-medium">Someone we made happy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">FEATURED IN</h2>
+            <p class="text-lg text-center mb-12">Explore the recognition and features we've garnered throughout these years</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center max-w-5xl mx-auto">
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Forbes_logo.svg/1200px-Forbes_logo.svg.png" alt="Forbes Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://images.livemint.com/static/livemint-logo-v1.svg" alt="Mint Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://www.thehindu.com/theme/images/th-online/thehindu-logo.svg" alt="The Hindu Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png" alt="Harvard University Logo" class="h-16 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://static.toiimg.com/photo/47529300.cms" alt="The Times of India Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://www.hindustantimes.com/res/images/ht-logo.svg" alt="Hindustan Times Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://images.thequint.com/thequint%2F2020-02%2F68505f8e-e44a-4c4d-9d7a-3fa8181d4741%2FNew_quint_logo_Light_theme.png" alt="The Quint Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/University_of_Cambridge_coat_of_arms_official.svg/1200px-University_of_Cambridge_coat_of_arms_official.svg.png" alt="University of Cambridge Logo" class="h-16 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://economictimes.indiatimes.com/photo/47529300.cms" alt="The Economic Times Logo" class="h-12 mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Approach Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">OUR APPROACH TO THERAPY</h2>
+            <p class="text-lg text-center mb-12 max-w-3xl mx-auto">We believe that each client is unique, and not every approach to therapy works for everyone. Our therapists adopt an eclectic approach, drawing from a diverse range of methodologies. All the therapists working with us follow a queer-friendly, trauma-informed approach.</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Cognitive Behavioural Therapy (CBT)</p>
+                </div>
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Acceptance and Commitment Therapy (ACT)</p>
+                </div>
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Dialectical Behavioural therapy (DBT)</p>
+                </div>
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Person-Centred Therapy</p>
+                </div>
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Emotion-Focused therapy (EFT)</p>
+                </div>
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Exposure Response Prevention Therapy (ERPT)</p>
+                </div>
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Mindfulness</p>
+                </div>
+                <div class="approach-item flex items-center gap-4">
+                    <div class="flex-shrink-0 text-primary">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <p class="text-lg">Narrative Therapy</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="pages/booking.html" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition inline-block">Book a Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (Repeat) -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold text-center mb-8">OUR STANDARD CHARGES</h3>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h4 class="text-xl font-semibold mb-4">Counselling Psychologist</h4>
+                    <p class="text-2xl font-bold text-primary mb-2">₹2300</p>
+                    <p class="text-gray-600">per session</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h4 class="text-xl font-semibold mb-4">Clinical Psychologist</h4>
+                    <p class="text-2xl font-bold text-primary mb-2">₹2700</p>
+                    <p class="text-gray-600">per session</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <h4 class="text-xl font-medium mb-6">For more information visit</h4>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="pages/therapy.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">THERAPY</a>
+                    <a href="pages/diagnosis.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">DIAGNOSIS</a>
+                    <a href="pages/pricing.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">PRICING</a>
+                    <a href="pages/couples-counselling.html" class="px-6 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">COUPLE'S COUNSELLING</a>
+                </div>
+                <div class="mt-8">
+                    <p class="text-lg font-medium mb-4">OR</p>
+                    <h4 class="text-2xl font-semibold mb-6">MESSAGE US AND BOOK YOUR SESSION</h4>
+                    <div class="flex justify-center gap-6">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial -->
+            <div class="max-w-3xl mx-auto mt-16 bg-primary text-white rounded-lg p-8 relative">
+                <div class="absolute -top-6 left-8 text-white">
+                    <i class="fas fa-quote-left text-5xl"></i>
+                </div>
+                <p class="text-lg italic mb-6 pt-4">It's extremely hard to take this step at 17, but you made it very comfortable. Thank you for having the Friendly Couch; the reels you put out made me well-prepared about what to expect and what not. The terms and conditions were detailed really well; they gave a mental preparedness. Thank you for maintaining confidentiality of information. I had a really bad experience previous to this, and only because of you could I trust in this process again. I could solve a lot of problems before entering into a larger world. Keep doing this good work.</p>
+                <p class="font-medium">Someone we made happy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">COMMON QUESTIONS</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">What are the charges?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Our standard charges are: Counselling Psychologist - INR2300 Clinical Psychologist - INR2700 For further details, visit our <a href="pages/pricing.html" class="text-primary hover:underline">Pricing page.</a></p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">How do I schedule a session?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">You can book a session by messaging us on WhatsApp (+919205025183) Instagram (@thefriendlycouch) For further details, visit our <a href="pages/therapy.html" class="text-primary hover:underline">Therapy page.</a></p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Can you help me get diagnosed?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Yes, the clinical psychologists on our team offer diagnosis/diagnostic evaluation. Please visit our <a href="pages/diagnosis.html" class="text-primary hover:underline">Diagnosis Page</a> for more information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">How many sessions will I need?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">The therapist will recommend an initial session to assess your concerns and discuss a suitable frequency for ongoing sessions. There is no strict schedule you need to adhere to; you are free to choose a session frequency that aligns with your comfort and preferences.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Are trial/introductory sessions available?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">We do not provide introductory calls or trial/free sessions to ensure fair compensation for the therapists' time, effort, and expertise in assisting individuals. However, you are welcome to engage in a brief conversation via WhatsApp chat/messages before scheduling your first session. Feel free to explore this opportunity without any pressure or obligation to continue with therapy. The decision to proceed is entirely yours.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Do you provide in-person therapy?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">We currently only offer online therapy over audio & video calls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">GET IN TOUCH WITH US</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="text-center md:text-left">
+                    <img src="https://images.pexels.com/photos/7652040/pexels-photo-7652040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Contact Image" class="w-full h-auto rounded-lg shadow-lg mb-8">
+                    
+                    <div class="flex justify-center md:justify-start space-x-6 mb-8">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    
+                    <p class="text-xl font-medium mb-2">OR</p>
+                    
+                    <p class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <i class="fab fa-instagram text-xl text-primary"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    
+                    <p class="flex items-center justify-center md:justify-start gap-3">
+                        <i class="fab fa-whatsapp text-xl text-green-500"></i>
+                        <a href="tel:+919205025183" class="hover:text-primary">+91 9205025183</a>
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">CONTACT US</h3>
+                    <p class="mb-8 text-center md:text-left">Fill up the form below to send us a message.</p>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label
+                            <label for="name" class="block text-lg font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-lg font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your email">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-lg font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-lg font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full resize-none" placeholder="What would you like to tell us?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition w-full">Send Message</button>
+                    </form>
+                    
+                    <!-- Confirmation Message (Initially Hidden) -->
+                    <div id="confirmation-message" class="hidden mt-8 p-6 bg-green-50 border-2 border-green-500 rounded-lg text-center">
+                        <i class="fas fa-check-circle text-green-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Message Sent!</h3>
+                        <p class="mb-4">Thank you for reaching out to us. We'll get back to you within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Friendly Couch</h3>
+                    <p class="mb-6">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="pages/therapy.html" class="hover:text-secondary transition">Therapy</a></li>
+                        <li><a href="pages/diagnosis.html" class="hover:text-secondary transition">Diagnosis</a></li>
+                        <li><a href="pages/pricing.html" class="hover:text-secondary transition">Pricing</a></li>
+                        <li><a href="pages/couples-counselling.html" class="hover:text-secondary transition">Couple's Counselling</a></li>
+                        <li><a href="pages/about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="pages/contact.html" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-instagram mr-2"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span>+91 9205025183</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 mt-8 pt-8 text-center">
+                <p>&copy; 2023 The Friendly Couch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Contact form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form inputs
+                    const nameInput = document.getElementById('name');
+                    const emailInput = document.getElementById('email');
+                    const phoneInput = document.getElementById('phone');
+                    const messageInput = document.getElementById('message');
+                    
+                    // Reset error messages
+                    document.querySelectorAll('.error-message').forEach(el => el.remove());
+                    document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error', 'border-red-500'));
+                    
+                    // Validate inputs
+                    let valid = true;
+                    
+                    if (!nameInput.value.trim()) {
+                        showError(nameInput, 'Name is required');
+                        valid = false;
+                    }
+                    
+                    if (!emailInput.value.trim()) {
+                        showError(emailInput, 'Email address is required');
+                        valid = false;
+                    } else if (!isValidEmail(emailInput.value)) {
+                        showError(emailInput, 'Please enter a valid email address');
+                        valid = false;
+                    }
+                    
+                    if (!phoneInput.value.trim()) {
+                        showError(phoneInput, 'Phone number is required');
+                        valid = false;
+                    }
+                    
+                    if (!messageInput.value.trim()) {
+                        showError(messageInput, 'Please enter your message');
+                        valid = false;
+                    }
+                    
+                    if (valid) {
+                        // Submit form (this would typically be an AJAX request to a backend API)
+                        // For now, we'll simulate a successful submission
+                        
+                        // Hide form
+                        contactForm.classList.add('hidden');
+                        
+                        // Show confirmation message
+                        if (confirmationMessage) {
+                            confirmationMessage.classList.remove('hidden');
+                        }
+                    }
+                });
+            }
+            
+            // Helper function to show error message
+            function showError(inputElement, message) {
+                // Add error class to input
+                inputElement.classList.add('error', 'border-red-500');
+                
+                // Create error message element
+                const errorElement = document.createElement('p');
+                errorElement.className = 'error-message text-red-500 text-sm mt-1';
+                errorElement.textContent = message;
+                
+                // Insert error message after input
+                inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
+            }
+            
+            // Helper function to validate email
+            function isValidEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email.toLowerCase());
+            }
+        });
+    </script>
+</body>
+</html>
