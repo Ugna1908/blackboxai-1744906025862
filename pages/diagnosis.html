@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis & Assessment | The Friendly Couch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8',
+                        secondary: '#F9A826',
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center">
+                <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="../index.html" class="font-medium hover:text-primary transition">Home</a>
+                <a href="therapy.html" class="font-medium hover:text-primary transition">Therapy</a>
+                <a href="diagnosis.html" class="text-primary font-medium hover:text-secondary transition">Diagnosis</a>
+                <a href="pricing.html" class="font-medium hover:text-primary transition">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium hover:text-primary transition">Couple's Counselling</a>
+                <a href="about.html" class="font-medium hover:text-primary transition">About</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Book Session Button -->
+            <a href="booking.html" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">Book a Session</a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="../index.html" class="font-medium py-2 hover:bg-light px-4 rounded">Home</a>
+                <a href="therapy.html" class="font-medium py-2 hover:bg-light px-4 rounded">Therapy</a>
+                <a href="diagnosis.html" class="text-primary font-medium py-2 hover:bg-light px-4 rounded">Diagnosis</a>
+                <a href="pricing.html" class="font-medium py-2 hover:bg-light px-4 rounded">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium py-2 hover:bg-light px-4 rounded">Couple's Counselling</a>
+                <a href="about.html" class="font-medium py-2 hover:bg-light px-4 rounded">About</a>
+                <a href="contact.html" class="font-medium py-2 hover:bg-light px-4 rounded">Contact</a>
+                <a href="booking.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition text-center">Book a Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Diagnosis Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Psychological Assessment & Diagnosis</h1>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">Gain insights and clarity with our comprehensive psychological assessments conducted by experienced clinical psychologists.</p>
+        </div>
+    </section>
+
+    <!-- About Psychological Assessment Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div>
+                    <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Psychological Assessment" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">What is Psychological Assessment?</h2>
+                    <p class="text-lg mb-6">Psychological assessment is a process of testing and evaluation that uses a combination of techniques to help arrive at some hypotheses about a person and their behavior, personality, and capabilities.</p>
+                    <p class="text-lg mb-6">Our comprehensive assessments are conducted by qualified Clinical Psychologists and include structured interviews, standardized tests, and detailed observations, tailored to your specific concerns.</p>
+                    <p class="text-lg mb-6">The outcome of an assessment is a detailed report that provides clarity about your psychological functioning, a formal diagnosis (if applicable), and recommendations for treatment and support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Friendly Couch</h3>
+                    <p class="mb-6">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="therapy.html" class="hover:text-secondary transition">Therapy</a></li>
+                        <li><a href="diagnosis.html" class="hover:text-secondary transition">Diagnosis</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition">Pricing</a></li>
+                        <li><a href="couples-counselling.html" class="hover:text-secondary transition">Couple's Counselling</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-instagram mr-2"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span>+91 9205025183</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 mt-8 pt-8 text-center">
+                <p>&copy; 2023 The Friendly Couch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
