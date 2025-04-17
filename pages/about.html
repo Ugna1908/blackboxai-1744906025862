@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | The Friendly Couch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8', // Purple color from the original site
+                        secondary: '#F9A826', // Accent color
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center">
+                <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="../index.html" class="font-medium hover:text-primary transition">Home</a>
+                <a href="therapy.html" class="font-medium hover:text-primary transition">Therapy</a>
+                <a href="diagnosis.html" class="font-medium hover:text-primary transition">Diagnosis</a>
+                <a href="pricing.html" class="font-medium hover:text-primary transition">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium hover:text-primary transition">Couple's Counselling</a>
+                <a href="about.html" class="text-primary font-medium hover:text-secondary transition">About</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Book Session Button -->
+            <a href="booking.html" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">Book a Session</a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="../index.html" class="font-medium py-2 hover:bg-light px-4 rounded">Home</a>
+                <a href="therapy.html" class="font-medium py-2 hover:bg-light px-4 rounded">Therapy</a>
+                <a href="diagnosis.html" class="font-medium py-2 hover:bg-light px-4 rounded">Diagnosis</a>
+                <a href="pricing.html" class="font-medium py-2 hover:bg-light px-4 rounded">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium py-2 hover:bg-light px-4 rounded">Couple's Counselling</a>
+                <a href="about.html" class="text-primary font-medium py-2 hover:bg-light px-4 rounded">About</a>
+                <a href="contact.html" class="font-medium py-2 hover:bg-light px-4 rounded">Contact</a>
+                <a href="booking.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition text-center">Book a Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">About Us</h1>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">Get to know The Friendly Couch, our team, and our mission to make mental health care accessible and judgment-free.</p>
+        </div>
+    </section>
+
+    <!-- Founder's Story Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div>
+                    <img src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Divija Bhasin" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Founder's Story</h2>
+                    <h3 class="text-xl font-semibold mb-4">Divija Bhasin, Counselling Psychologist</h3>
+                    <p class="text-lg mb-6">Growing up, I saw people around me struggle with their mental health. I knew that it was hard but realized that it was even more challenging without professional support.</p>
+                    <p class="text-lg font-medium mb-6">Nothing can replace therapy.</p>
+                    <p class="text-lg mb-6">Helping people with their mental health journey is not just my profession, it's also personal for me. The Friendly Couch started as an idea when I was just a kid. I'm thrilled that I am finally doing it!</p>
+                    <p class="text-lg mb-6">With a strong belief in making mental health care accessible and stigma-free, I've built a team of compassionate, qualified therapists who provide support in various languages across India.</p>
+                    <div class="flex space-x-4 mt-8">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full hover:opacity-90 transition flex items-center">
+                            <i class="fab fa-instagram mr-2"></i>
+                            <span>Follow on Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Mission</h2>
+            
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-4 rounded-full mx-auto w-20 h-20 flex items-center justify-center mb-6">
+                        <i class="fas fa-hand-holding-heart text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Accessible Care</h3>
+                    <p class="text-gray-600">Making quality mental health care accessible to everyone across India through online sessions.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-4 rounded-full mx-auto w-20 h-20 flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Inclusive Support</h3>
+                    <p class="text-gray-600">Creating a judgment-free space where everyone feels welcome, understood, and supported.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-4 rounded-full mx-auto w-20 h-20 flex items-center justify-center mb-6">
+                        <i class="fas fa-map-signs text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Guided Growth</h3>
+                    <p class="text-gray-600">Empowering individuals to navigate life's challenges and develop lasting coping skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Meet Our Team</h2>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">Our diverse team of qualified therapists is committed to providing compassionate, professional care.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Founder Card -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Divija Bhasin" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Divija Bhasin</h3>
+                        <p class="text-primary mb-4">Counselling Psychologist, Founder</p>
+                        <p class="text-gray-600 mb-4">Specializes in anxiety, depression, and relationship counselling. Passionate about making therapy accessible to all.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member Cards -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Therapist" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Priya Sharma</h3>
+                        <p class="text-primary mb-4">Clinical Psychologist</p>
+                        <p class="text-gray-600 mb-4">Specializes in trauma, PTSD, and anxiety disorders. Uses a combination of CBT and mindfulness approaches.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Punjabi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Therapist" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Rahul Mehta</h3>
+                        <p class="text-primary mb-4">Counselling Psychologist</p>
+                        <p class="text-gray-600 mb-4">Specializes in ADHD, stress management, and workplace mental health issues. Adopts a solution-focused approach.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Gujarati</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/6127616/pexels-photo-6127616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Therapist" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Anjali Nair</h3>
+                        <p class="text-primary mb-4">Clinical Psychologist</p>
+                        <p class="text-gray-600 mb-4">Specializes in mood disorders, relationships, and self-esteem issues. Practices a blend of CBT and person-centered therapy.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Malayalam</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Tamil</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5699459/pexels-photo-5699459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Therapist" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Arjun Reddy</h3>
+                        <p class="text-primary mb-4">Counselling Psychologist</p>
+                        <p class="text-gray-600 mb-4">Specializes in adolescent issues, identity, and life transitions. Uses narrative and acceptance-based approaches.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Telugu</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5699483/pexels-photo-5699483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Therapist" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Meera Banerjee</h3>
+                        <p class="text-primary mb-4">Clinical Psychologist</p>
+                        <p class="text-gray-600 mb-4">Specializes in couples therapy, family dynamics, and interpersonal relationships. Practices EFT and systemic therapy.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Bengali</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="booking.html" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition inline-block">Book a Session With Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Core Values</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-4 rounded-full mr-4">
+                            <i class="fas fa-heart text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold">Compassion</h3>
+                    </div>
+                    <p class="text-gray-600">We approach every client with genuine care, empathy, and understanding, creating a safe space for healing and growth.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-4 rounded-full mr-4">
+                            <i class="fas fa-universal-access text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold">Inclusivity</h3>
+                    </div>
+                    <p class="text-gray-600">We embrace diversity and are committed to providing a judgment-free space where everyone feels welcome, regardless of background or identity.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-4 rounded-full mr-4">
+                            <i class="fas fa-certificate text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold">Excellence</h3>
+                    </div>
+                    <p class="text-gray-600">We maintain the highest standards of professional excellence, ensuring that our clients receive quality care from qualified therapists.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-4 rounded-full mr-4">
+                            <i class="fas fa-lock text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold">Confidentiality</h3>
+                    </div>
+                    <p class="text-gray-600">We uphold the strictest standards of privacy and confidentiality, creating a secure environment where clients can share openly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">Thanks to your organization, which understands our Indian culture well and comprehends how the lack of awareness and information about various mental health issues impacts India. Therapy isn't a Western concept; Indians just haven't recognized it.</p>
+                    <p class="font-medium">Someone we made happy</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">Spot on. She steers me into my darkest moments to open up with ease. She explains the dos and don'ts of handling overwhelming emotions and advises on not easily giving in to guilt tripping myself. That's the most one would need to hear after a session.</p>
+                    <p class="font-medium">Someone we made happy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Recognition Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured In</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center max-w-5xl mx-auto">
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Forbes_logo.svg/1200px-Forbes_logo.svg.png" alt="Forbes Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://images.livemint.com/static/livemint-logo-v1.svg" alt="Mint Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://www.thehindu.com/theme/images/th-online/thehindu-logo.svg" alt="The Hindu Logo" class="h-12 mx-auto">
+                </div>
+                <div class="feature-item text-center grayscale hover:grayscale-0 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png" alt="Harvard University Logo" class="h-16 mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Your Session Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin Your Therapy Journey?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Our team of qualified and compassionate therapists is here to support you every step of the way.</p>
+            <a href="booking.html" class="bg-white text-primary px-8 py-3 rounded-full text-lg hover:bg-secondary hover:text-white transition inline-block">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Friendly Couch</h3>
+                    <p class="mb-6">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="therapy.html" class="hover:text-secondary transition">Therapy</a></li>
+                        <li><a href="diagnosis.html" class="hover:text-secondary transition">Diagnosis</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition">Pricing</a></li>
+                        <li><a href="couples-counselling.html" class="hover:text-secondary transition">Couple's Counselling</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-instagram mr-2"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span>+91 9205025183</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 mt-8 pt-8 text-center">
+                <p>&copy; 2023 The Friendly Couch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
