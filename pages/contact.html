@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | The Friendly Couch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8', // Purple color from the original site
+                        secondary: '#F9A826', // Accent color
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center">
+                <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="../index.html" class="font-medium hover:text-primary transition">Home</a>
+                <a href="therapy.html" class="font-medium hover:text-primary transition">Therapy</a>
+                <a href="diagnosis.html" class="font-medium hover:text-primary transition">Diagnosis</a>
+                <a href="pricing.html" class="font-medium hover:text-primary transition">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium hover:text-primary transition">Couple's Counselling</a>
+                <a href="about.html" class="font-medium hover:text-primary transition">About</a>
+                <a href="contact.html" class="text-primary font-medium hover:text-secondary transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Book Session Button -->
+            <a href="booking.html" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">Book a Session</a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="../index.html" class="font-medium py-2 hover:bg-light px-4 rounded">Home</a>
+                <a href="therapy.html" class="font-medium py-2 hover:bg-light px-4 rounded">Therapy</a>
+                <a href="diagnosis.html" class="font-medium py-2 hover:bg-light px-4 rounded">Diagnosis</a>
+                <a href="pricing.html" class="font-medium py-2 hover:bg-light px-4 rounded">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium py-2 hover:bg-light px-4 rounded">Couple's Counselling</a>
+                <a href="about.html" class="font-medium py-2 hover:bg-light px-4 rounded">About</a>
+                <a href="contact.html" class="text-primary font-medium py-2 hover:bg-light px-4 rounded">Contact</a>
+                <a href="booking.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition text-center">Book a Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Get In Touch</h1>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">We're here to help. Reach out to us with any questions or to book your session.</p>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <!-- Contact Info Column -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-8">Contact Information</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fab fa-whatsapp text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium mb-2">WhatsApp</h3>
+                                <p class="text-gray-600 mb-2">Message us directly for quick responses</p>
+                                <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-primary hover:text-secondary transition">+91 9205025183</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fab fa-instagram text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium mb-2">Instagram</h3>
+                                <p class="text-gray-600 mb-2">Follow us for mental health tips and updates</p>
+                                <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-primary hover:text-secondary transition">@thefriendlycouch</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-clock text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium mb-2">Operating Hours</h3>
+                                <p class="text-gray-600 mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p class="text-gray-600">Saturday: 10:00 AM - 3:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-laptop text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium mb-2">Online Sessions</h3>
+                                <p class="text-gray-600">We provide therapy sessions via secure video calls, accessible from anywhere in India.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-full hover:opacity-90 transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="bg-green-500 text-white p-3 rounded-full hover:opacity-90 transition">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Column -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label for="full-name" class="block text-lg font-medium mb-2">Full Name</label>
+                            <input type="text" id="full-name" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your full name">
+                        </div>
+                        
+                        <!-- Email Address -->
+                        <div>
+                            <label for="email" class="block text-lg font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your email address">
+                        </div>
+                        
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="phone" class="block text-lg font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-lg font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full resize-none" placeholder="Type your message here..."></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition w-full">Send Message</button>
+                    </form>
+                    
+                    <!-- Confirmation Message (Initially Hidden) -->
+                    <div id="confirmation-message" class="hidden mt-8 p-6 bg-green-50 border-2 border-green-500 rounded-lg text-center">
+                        <i class="fas fa-check-circle text-green-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Message Sent!</h3>
+                        <p class="mb-4">Thank you for reaching out to us. We'll get back to you within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">How quickly will I receive a response?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">We typically respond to all inquiries within 24 hours during business days. For urgent matters, we recommend reaching out via WhatsApp for faster response times.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Can I book a session directly through this contact form?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">While we'll respond to your booking request, we recommend using our dedicated <a href="booking.html" class="text-primary hover:underline">booking page</a> for faster processing. Alternatively, you can contact us directly via WhatsApp or Instagram.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Is my information kept confidential?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Absolutely. All information shared through this form is strictly confidential and used only to respond to your inquiry. We adhere to the highest standards of privacy and data protection.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Can I request a specific therapist?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Yes, you can mention your preference for a specific therapist in your message. We'll do our best to accommodate your request based on the therapist's availability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Your Session Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin Your Therapy Journey?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Our team of qualified and compassionate therapists is here to support you every step of the way.</p>
+            <a href="booking.html" class="bg-white text-primary px-8 py-3 rounded-full text-lg hover:bg-secondary hover:text-white transition inline-block">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Friendly Couch</h3>
+                    <p class="mb-6">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="therapy.html" class="hover:text-secondary transition">Therapy</a></li>
+                        <li><a href="diagnosis.html" class="hover:text-secondary transition">Diagnosis</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition">Pricing</a></li>
+                        <li><a href="couples-counselling.html" class="hover:text-secondary transition">Couple's Counselling</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-instagram mr-2"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span>+91 9205025183</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 mt-8 pt-8 text-center">
+                <p>&copy; 2023 The Friendly Couch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script>
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form inputs
+                    const fullName = document.getElementById('full-name');
+                    const email = document.getElementById('email');
+                    const phone = document.getElementById('phone');
+                    const message = document.getElementById('message');
+                    
+                    // Reset error messages
+                    document.querySelectorAll('.error-message').forEach(el => el.remove());
+                    document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error', 'border-red-500'));
+                    
+                    // Validate inputs
+                    let valid = true;
+                    
+                    if (!fullName.value.trim()) {
+                        showError(fullName, 'Full name is required');
+                        valid = false;
+                    }
+                    
+                    if (!email.value.trim()) {
+                        showError(email, 'Email address is required');
+                        valid = false;
+                    } else if (!isValidEmail(email.value)) {
+                        showError(email, 'Please enter a valid email address');
+                        valid = false;
+                    }
+                    
+                    if (!phone.value.trim()) {
+                        showError(phone, 'Phone number is required');
+                        valid = false;
+                    } else if (!isValidPhone(phone.value)) {
+                        showError(phone, 'Please enter a valid phone number');
+                        valid = false;
+                    }
+                    
+                    if (!message.value.trim()) {
+                        showError(message, 'Please enter your message');
+                        valid = false;
+                    }
+                    
+                    if (valid) {
+                        // Submit form (this would typically be an AJAX request to a backend API)
+                        // For now, we'll simulate a successful submission
+                        
+                        // Hide form
+                        contactForm.classList.add('hidden');
+                        
+                        // Show confirmation message
+                        if (confirmationMessage) {
+                            confirmationMessage.classList.remove('hidden');
+                            confirmationMessage.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            }
+            
+            // Helper function to show error message
+            function showError(inputElement, message) {
+                // Add error class to input
+                inputElement.classList.add('error', 'border-red-500');
+                
+                // Create error message element
+                const errorElement = document.createElement('p');
+                errorElement.className = 'error-message text-red-500 text-sm mt-1';
+                errorElement.textContent = message;
+                
+                // Insert error message after input
+                inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
+            }
+            
+            // Helper function to validate email
+            function isValidEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email.toLowerCase());
+            }
+            
+            // Helper function to validate phone number
+            function isValidPhone(phone) {
+                const re = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+                return re.test(phone);
+            }
+        });
+    </script>
+</body>
+</html>
