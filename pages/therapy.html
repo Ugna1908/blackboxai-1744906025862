@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Services | The Friendly Couch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8', // Purple color from the original site
+                        secondary: '#F9A826', // Accent color
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center">
+                <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="../index.html" class="font-medium hover:text-primary transition">Home</a>
+                <a href="therapy.html" class="text-primary font-medium hover:text-secondary transition">Therapy</a>
+                <a href="diagnosis.html" class="font-medium hover:text-primary transition">Diagnosis</a>
+                <a href="pricing.html" class="font-medium hover:text-primary transition">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium hover:text-primary transition">Couple's Counselling</a>
+                <a href="about.html" class="font-medium hover:text-primary transition">About</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Book Session Button -->
+            <a href="booking.html" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">Book a Session</a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="../index.html" class="font-medium py-2 hover:bg-light px-4 rounded">Home</a>
+                <a href="therapy.html" class="text-primary font-medium py-2 hover:bg-light px-4 rounded">Therapy</a>
+                <a href="diagnosis.html" class="font-medium py-2 hover:bg-light px-4 rounded">Diagnosis</a>
+                <a href="pricing.html" class="font-medium py-2 hover:bg-light px-4 rounded">Pricing</a>
+                <a href="couples-counselling.html" class="font-medium py-2 hover:bg-light px-4 rounded">Couple's Counselling</a>
+                <a href="about.html" class="font-medium py-2 hover:bg-light px-4 rounded">About</a>
+                <a href="contact.html" class="font-medium py-2 hover:bg-light px-4 rounded">Contact</a>
+                <a href="booking.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition text-center">Book a Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Therapy Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Our Therapy Services</h1>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">Experience personalized, professional therapy with our team of qualified and compassionate therapists.</p>
+        </div>
+    </section>
+
+    <!-- Therapy Process Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">The Therapy Journey</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                    <h3 class="text-xl font-semibold mb-4 mt-4">Initial Session</h3>
+                    <p class="text-gray-600">Your therapist will get to know you and understand your concerns. Together, you'll establish goals for your therapy journey.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                    <h3 class="text-xl font-semibold mb-4 mt-4">Ongoing Sessions</h3>
+                    <p class="text-gray-600">Work with your therapist to explore your concerns deeply, develop coping strategies, and track your progress.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                    <h3 class="text-xl font-semibold mb-4 mt-4">Growth & Independence</h3>
+                    <p class="text-gray-600">As you progress, sessions may become less frequent. You'll develop skills to manage challenges independently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Therapy Approaches Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Therapy Approaches</h2>
+            <p class="text-lg text-center mb-12 max-w-3xl mx-auto">We believe that each client is unique, and not every approach to therapy works for everyone. Our therapists adopt an eclectic approach, drawing from a diverse range of methodologies.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-brain text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Cognitive Behavioural Therapy (CBT)</h3>
+                    </div>
+                    <p class="text-gray-600">Helps identify and change negative thought patterns and behaviors that affect your emotions and actions.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-hands-helping text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Acceptance and Commitment Therapy (ACT)</h3>
+                    </div>
+                    <p class="text-gray-600">Focuses on accepting difficult thoughts and feelings while committing to behaviors that improve and enrich your life.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-balance-scale text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Dialectical Behavioural Therapy (DBT)</h3>
+                    </div>
+                    <p class="text-gray-600">Combines cognitive techniques with mindfulness to help regulate emotions and improve relationships.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-user text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Person-Centred Therapy</h3>
+                    </div>
+                    <p class="text-gray-600">Creates a supportive environment where you can grow and heal through self-exploration and acceptance.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-heart text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Emotion-Focused Therapy (EFT)</h3>
+                    </div>
+                    <p class="text-gray-600">Focuses on emotional awareness and expression to help transform problematic emotions and improve relationships.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-door-open text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Exposure Response Prevention Therapy (ERPT)</h3>
+                    </div>
+                    <p class="text-gray-600">Particularly effective for anxiety disorders and OCD, involves gradual exposure to feared situations or thoughts.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-cloud text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Mindfulness</h3>
+                    </div>
+                    <p class="text-gray-600">Cultivates present-moment awareness and acceptance, reducing stress and enhancing emotional regulation.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-book text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Narrative Therapy</h3>
+                    </div>
+                    <p class="text-gray-600">Helps you create new meanings and perspectives by examining the stories you tell about yourself and your life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concerns We Address Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Concerns We Address</h2>
+            <p class="text-lg text-center mb-12 max-w-3xl mx-auto">Our therapists are experienced in helping clients with a wide range of concerns, including:</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-brain text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">ANXIETY</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-wind text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">STRESS</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-user-friends text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">RELATIONSHIPS</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-bolt text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">ADHD</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-heart-broken text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">TRAUMA</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-cloud-rain text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">DEPRESSION</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-bed text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">SLEEP ISSUES</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-utensils text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">EATING DISORDERS</h3>
+                </div>
+                <div class="concern-item text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="rounded-full bg-primary/10 p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-ellipsis-h text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl">AND MORE</h3>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg italic mb-8">If you're experiencing a concern not listed here, please reach out. Our therapists are trained to help with a wide range of mental health challenges.</p>
+                <a href="booking.html" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition inline-block">Book a Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">Thanks to your organization, which understands our Indian culture well and comprehends how the lack of awareness and information about various mental health issues impacts India. Therapy isn't a Western concept; Indians just haven't recognized it.</p>
+                    <p class="font-medium">Someone we made happy</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">Spot on. She steers me into my darkest moments to open up with ease. She explains the dos and don'ts of handling overwhelming emotions and advises on not easily giving in to guilt tripping myself. That's the most one would need to hear after a session.</p>
+                    <p class="font-medium">Someone we made happy</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">Before starting the therapy, I thought I wouldn't be comfortable talking if it's not in Punjabi. But actually, that wasn't the case. I was pretty comfortable in Hindi and English, and I loved how my therapist made me feel so comfortable in every session.</p>
+                    <p class="font-medium">Someone we made happy</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">It's extremely hard to take this step at 17, but you made it very comfortable. Thank you for having the Friendly Couch; the reels you put out made me well-prepared about what to expect and what not. The terms and conditions were detailed really well.</p>
+                    <p class="font-medium">Someone we made happy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Your Session Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin Your Therapy Journey?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Our team of qualified and compassionate therapists is here to support you every step of the way.</p>
+            <a href="booking.html" class="bg-white text-primary px-8 py-3 rounded-full text-lg hover:bg-secondary hover:text-white transition inline-block">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Friendly Couch</h3>
+                    <p class="mb-6">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="therapy.html" class="hover:text-secondary transition">Therapy</a></li>
+                        <li><a href="diagnosis.html" class="hover:text-secondary transition">Diagnosis</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition">Pricing</a></li>
+                        <li><a href="couples-counselling.html" class="hover:text-secondary transition">Couple's Counselling</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-instagram mr-2"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span>+91 9205025183</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 mt-8 pt-8 text-center">
+                <p>&copy; 2023 The Friendly Couch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
