@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couples Counselling | The Friendly Couch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8', // Purple color from the original site
+                        secondary: '#F9A826', // Accent color
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center">
+                <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="../index.html" class="font-medium hover:text-primary transition">Home</a>
+                <a href="therapy.html" class="font-medium hover:text-primary transition">Therapy</a>
+                <a href="diagnosis.html" class="font-medium hover:text-primary transition">Diagnosis</a>
+                <a href="pricing.html" class="font-medium hover:text-primary transition">Pricing</a>
+                <a href="couples-counselling.html" class="text-primary font-medium hover:text-secondary transition">Couple's Counselling</a>
+                <a href="about.html" class="font-medium hover:text-primary transition">About</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Book Session Button -->
+            <a href="booking.html" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">Book a Session</a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="../index.html" class="font-medium py-2 hover:bg-light px-4 rounded">Home</a>
+                <a href="therapy.html" class="font-medium py-2 hover:bg-light px-4 rounded">Therapy</a>
+                <a href="diagnosis.html" class="font-medium py-2 hover:bg-light px-4 rounded">Diagnosis</a>
+                <a href="pricing.html" class="font-medium py-2 hover:bg-light px-4 rounded">Pricing</a>
+                <a href="couples-counselling.html" class="text-primary font-medium py-2 hover:bg-light px-4 rounded">Couple's Counselling</a>
+                <a href="about.html" class="font-medium py-2 hover:bg-light px-4 rounded">About</a>
+                <a href="contact.html" class="font-medium py-2 hover:bg-light px-4 rounded">Contact</a>
+                <a href="booking.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition text-center">Book a Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Couples Counselling Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Couples Counselling</h1>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">Build a stronger, healthier relationship with professional guidance. Our couples counselling helps you navigate challenges and reconnect with your partner.</p>
+        </div>
+    </section>
+
+    <!-- About Couples Counselling Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div>
+                    <img src="https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Couple Talking" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">What is Couples Counselling?</h2>
+                    <p class="text-lg mb-6">Couples counselling is a form of therapy that helps couples of all types recognize and resolve conflicts and improve their relationships. Through counselling, you can make thoughtful decisions about rebuilding and strengthening your relationship or going your separate ways.</p>
+                    <p class="text-lg mb-6">Our therapists provide a supportive environment where both partners can express themselves openly and honestly. We help you identify patterns, improve communication, and develop healthier ways of interacting.</p>
+                    <p class="text-lg mb-6">Whether you're dealing with serious issues or simply want to strengthen your bond, couples counselling can provide valuable tools and insights for your relationship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How Couples Counselling Works</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                    <h3 class="text-xl font-semibold mb-4 mt-4">Initial Assessment</h3>
+                    <p class="text-gray-600">In the first session, your therapist will meet with both of you to understand your relationship history, concerns, and goals for therapy.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                    <h3 class="text-xl font-semibold mb-4 mt-4">Joint Sessions</h3>
+                    <p class="text-gray-600">Regular sessions with both partners focus on improving communication, addressing specific issues, and learning new relationship skills.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                    <h3 class="text-xl font-semibold mb-4 mt-4">Building New Patterns</h3>
+                    <p class="text-gray-600">With your therapist's guidance, you'll practice new communication techniques and relationship behaviors both in session and at home.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg mb-6 max-w-3xl mx-auto">Couples counselling sessions are typically 60 minutes long and held weekly or bi-weekly. The number of sessions varies depending on your specific situation and goals.</p>
+                <p class="text-lg font-medium">All sessions are conducted online via secure video calls for your convenience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Benefits of Couples Counselling</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-comments text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Improved Communication</h3>
+                    </div>
+                    <p class="text-gray-600">Learn to express your needs, listen effectively, and understand each other on a deeper level.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-hand-holding-heart text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Rekindled Intimacy</h3>
+                    </div>
+                    <p class="text-gray-600">Rediscover the emotional and physical connection that may have diminished over time.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-puzzle-piece text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Conflict Resolution Skills</h3>
+                    </div>
+                    <p class="text-gray-600">Develop healthy ways to address disagreements without damaging your relationship.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-lightbulb text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Deeper Understanding</h3>
+                    </div>
+                    <p class="text-gray-600">Gain insights into yourself, your partner, and the dynamics of your relationship.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-shield-alt text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Stronger Bonds</h3>
+                    </div>
+                    <p class="text-gray-600">Build a more resilient relationship that can better withstand future challenges.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fas fa-compass text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Clarity & Direction</h3>
+                    </div>
+                    <p class="text-gray-600">Gain clarity about your relationship and make informed decisions about your future together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Issues Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Common Relationship Issues We Address</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-volume-mute text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Communication Problems</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-heart-broken text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Trust Issues</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-fire-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Intimacy Concerns</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-money-bill-wave text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Financial Conflicts</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-baby text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Parenting Differences</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-gavel text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Decision-Making</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-balance-scale text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Life Role Balancing</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md text-center">
+                    <div class="bg-primary/10 p-3 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <i class="fas fa-hourglass-half text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Life Transitions</h3>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg italic max-w-3xl mx-auto">If you're experiencing a concern not listed here, please reach out. Our couples therapists are trained to help with a wide range of relationship challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Couples Therapists Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Meet Our Couples Therapists</h2>
+            <p class="text-lg text-center max-w-2xl mx-auto mb-12">Our therapists are specially trained in couples counselling and relationship dynamics.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Therapist 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Meera Banerjee" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Meera Banerjee</h3>
+                        <p class="text-primary mb-4">Clinical Psychologist</p>
+                        <p class="text-gray-600 mb-4">Specializes in couples therapy with over 8 years of experience. Uses an emotion-focused approach to help couples reconnect and build deeper bonds.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Bengali</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Therapist 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5699459/pexels-photo-5699459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Arjun Reddy" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Arjun Reddy</h3>
+                        <p class="text-primary mb-4">Counselling Psychologist</p>
+                        <p class="text-gray-600 mb-4">Specializes in helping couples navigate major life transitions and improve communication patterns. Uses a solution-focused approach.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Telugu</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Therapist 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Divija Bhasin" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Divija Bhasin</h3>
+                        <p class="text-primary mb-4">Counselling Psychologist, Founder</p>
+                        <p class="text-gray-600 mb-4">Experienced in working with couples to rebuild trust and strengthen their emotional connection. Combines various therapeutic approaches.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">English</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hindi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Couples Say About Us</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">We were at a breaking point in our marriage when we started therapy. Our therapist helped us see patterns we'd been stuck in for years. It wasn't easy, but we've developed a much deeper understanding of each other now. The communication tools we learned have been life-changing.</p>
+                    <p class="font-medium">Couple of 15 years</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 left-8 text-primary">
+                        <i class="fas fa-quote-left text-5xl"></i>
+                    </div>
+                    <p class="text-lg italic mb-6 pt-4">As a newly engaged couple, we wanted to build a strong foundation before marriage. Our therapist created a safe space where we could discuss difficult topics we'd been avoiding. We've learned so much about how to support each other and communicate effectively.</p>
+                    <p class="font-medium">Recently engaged couple</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Couples Counselling Pricing</h2>
+            
+            <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-primary p-6 text-white text-center">
+                    <h3 class="text-2xl font-bold">Couples Session</h3>
+                </div>
+                <div class="p-8 text-center">
+                    <div class="text-4xl font-bold text-primary mb-4">₹3000</div>
+                    <p class="text-gray-600 mb-8">per 60-minute session</p>
+                    
+                    <ul class="space-y-4 text-left mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>60-minute online session with both partners</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Conducted by a therapist specialized in couples counselling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Secure online video/audio call</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Personalized therapy approach for your relationship</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Take-home exercises and resources</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="booking.html" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-secondary transition inline-block">Book Your Session</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg max-w-2xl mx-auto">Package discounts are available when booking multiple sessions. For more information about our packages, please visit our <a href="pricing.html" class="text-primary hover:underline">Pricing page</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">How long does couples counselling typically take?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">The duration varies depending on the nature and complexity of your relationship issues. Some couples see improvement in 8-10 sessions, while others may benefit from longer-term therapy. Your therapist will discuss a recommended timeline after your initial assessment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Do both partners need to attend every session?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Generally, both partners should attend all couples sessions for the best results. However, there may be occasions when your therapist recommends individual sessions as part of the overall treatment plan. This will be discussed with you during your therapy.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Is couples counselling only for relationships in crisis?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Not at all. While many couples seek therapy during difficult times, couples counselling can benefit relationships at any stage. Many couples use therapy as a proactive measure to strengthen their bond, improve communication, or prepare for major life transitions like marriage or parenthood.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">What if my partner is reluctant to try counselling?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">This is common. You might share information about the benefits of counselling, address their specific concerns, or suggest starting with just one session to see how it feels. Sometimes, framing therapy as a way to build relationship skills rather than "fixing problems" can help. You can also consider starting with individual counselling for yourself.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <h3 class="text-xl font-medium">Is everything we discuss confidential?</h3>
+                        <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-700">Yes, confidentiality is a fundamental aspect of therapy. What you discuss in couples counselling remains private between you, your partner, and your therapist. The only exceptions to confidentiality are situations involving risk of harm to yourself or others, which your therapist will explain during your first session.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Your Session Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Strengthen Your Relationship?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Take the first step toward a healthier, happier relationship by booking a couples counselling session today.</p>
+            <a href="booking.html" class="bg-white text-primary px-8 py-3 rounded-full text-lg hover:bg-secondary hover:text-white transition inline-block">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Friendly Couch</h3>
+                    <p class="mb-6">Begin your therapy journey with our team of qualified & open-minded therapists.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://ig.me/m/thefriendlycouch" target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/919205025183?text=I%20want%20to%20book%20an%20online%20session." target="_blank" class="text-white hover:text-secondary transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="therapy.html" class="hover:text-secondary transition">Therapy</a></li>
+                        <li><a href="diagnosis.html" class="hover:text-secondary transition">Diagnosis</a></li>
+                        <li><a href="pricing.html" class="hover:text-secondary transition">Pricing</a></li>
+                        <li><a href="couples-counselling.html" class="hover:text-secondary transition">Couple's Counselling</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-instagram mr-2"></i>
+                        <span>@thefriendlycouch</span>
+                    </p>
+                    <p class="flex items-center mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span>+91 9205025183</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 mt-8 pt-8 text-center">
+                <p>&copy; 2023 The Friendly Couch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
