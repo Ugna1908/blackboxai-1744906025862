@@ -1,44 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded');
+    
     // Initialize date picker
     const datePickerElement = document.getElementById('appointment-date');
     let selectedDate = null;
     let selectedTimeSlot = null;
     
     if (datePickerElement) {
-        // Initialize flatpickr
-        const datePicker = flatpickr(datePickerElement, {
-            minDate: "today",
-            dateFormat: "Y-m-d",
-            disable: [
-                function(date) {
-                    // Disable weekends (0 is Sunday, 6 is Saturday)
-                    return (date.getDay() === 0); // Only disable Sundays, keep Saturdays available
-                }
-            ],
-            onChange: function(selectedDates, dateStr) {
-                selectedDate = dateStr;
-                updateAvailableTimeSlots(dateStr);
-                
-                // Show time slots container
-                const timeSlotsContainer = document.getElementById('time-slots-container');
-                if (timeSlotsContainer) {
-                    timeSlotsContainer.classList.remove('hidden');
-                }
-                
-                // Reset selected time slot
-                selectedTimeSlot = null;
-                
-                // Hide booking form if it was visible
-                const bookingFormContainer = document.getElementById('booking-form-container');
-                if (bookingFormContainer) {
-                    bookingFormContainer.classList.add('hidden');
-                }
+        console.log('Found date picker element');
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        datePickerElement.min = today;
+        
+        // Add change event listener
+        datePickerElement.addEventListener('change', function(e) {
+            const selectedDateValue = e.target.value;
+            console.log('Date selected:', selectedDateValue);
+            
+            // Check if selected date is a Sunday
+            const selectedDay = new Date(selectedDateValue).getDay();
+            if (selectedDay === 0) {
+                alert('Sundays are not available for booking. Please select another date.');
+                e.target.value = '';
+                return;
             }
+            
+            selectedDate = selectedDateValue;
+            updateAvailableTimeSlots(selectedDateValue);
+            
+            // Show time slots container
+            const timeSlotsContainer = document.getElementById('time-slots-container');
+            if (timeSlotsContainer) {
+                timeSlotsContainer.classList.remove('hidden');
+            }
+            
+            // Reset selected time slot
+            selectedTimeSlot = null;
+            
+            // Hide booking form if it was visible
+            const bookingFormContainer = document.getElementById('booking-form-container');
+            if (bookingFormContainer) {
+                bookingFormContainer.classList.add('hidden');
+            }
+            
+            // Update summary
+            updateBookingSummary();
         });
+        
+        console.log('Date picker initialized successfully');
+    } else {
+        console.error('Date picker element not found');
     }
     
     // Function to update available time slots based on selected date
     function updateAvailableTimeSlots(dateStr) {
+        console.log('Updating time slots for date:', dateStr);
         const timeSlotsContainer = document.getElementById('time-slots');
         if (!timeSlotsContainer) return;
         
@@ -86,11 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to generate time slots (simulated data)
     function generateTimeSlots(dateStr) {
-        // This would typically come from an API
-        // For now, we'll simulate some available and unavailable slots
-        
         const slots = [];
-        const selectedDay = new Date(dateStr).getDay(); // 0 = Sunday, 1 = Monday, etc.
+        const selectedDay = new Date(dateStr).getDay();
         
         // Different schedules for different days
         const startHour = (selectedDay === 6) ? 10 : 9; // Start at 10AM on Saturdays, 9AM other days
@@ -115,13 +129,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update booking summary
     function updateBookingSummary() {
+        console.log('Updating booking summary');
         const summaryDate = document.getElementById('summary-date');
         const summaryTime = document.getElementById('summary-time');
         const summaryType = document.getElementById('summary-type');
         const summaryPrice = document.getElementById('summary-price');
         
-        if (summaryDate) summaryDate.textContent = selectedDate;
-        if (summaryTime) summaryTime.textContent = selectedTimeSlot;
+        if (summaryDate) {
+            if (selectedDate) {
+                const formattedDate = new Date(selectedDate).toLocaleDateString(undefined, {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric'
+                });
+                summaryDate.textContent = formattedDate;
+            } else {
+                summaryDate.textContent = 'Not selected';
+            }
+        }
+        if (summaryTime) summaryTime.textContent = selectedTimeSlot || 'Not selected';
         
         // Get selected psychologist type
         const psychologistType = document.querySelector('input[name="psychologist-type"]:checked');
@@ -191,9 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (valid) {
-                // Submit form (this would typically be an AJAX request to a backend API)
-                // For now, we'll simulate a successful booking
-                
                 // Hide form
                 bookingForm.classList.add('hidden');
                 
