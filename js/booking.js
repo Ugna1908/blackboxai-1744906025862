@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedDate = null;
     let selectedTimeSlot = null;
     
+    // Initialize Stripe with test publishable key
+    let stripe = Stripe('pk_test_51O5JqWSJHBF5RVTEVGjZWbIQkmAFpkEDgkPYxTNOYPyNLpS7ytD6oS5HZqAWfRnJEpHnVcYvqpT5eFyiCwgBICkY00CtOZGxlN');
+    let elements;
+    let paymentElement;
+    
     if (datePickerElement) {
         console.log('Found date picker element');
         try {
@@ -47,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error initializing date picker:', error);
         }
-    } else {
-        console.error('Date picker element not found');
     }
     
     // Function to update available time slots based on selected date
@@ -92,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const bookingFormContainer = document.getElementById('booking-form-container');
                     if (bookingFormContainer) {
                         bookingFormContainer.classList.remove('hidden');
+                        
+                        // Initialize Stripe payment element
+                        initializeStripe();
                     }
                     
                     // Update summary
@@ -103,12 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Function to generate time slots (simulated data)
+    // Function to generate time slots
     function generateTimeSlots(dateStr) {
         const slots = [];
         const selectedDay = new Date(dateStr).getDay();
         
-        // Different schedules for different days
         const startHour = (selectedDay === 6) ? 10 : 9; // Start at 10AM on Saturdays, 9AM other days
         const endHour = (selectedDay === 6) ? 15 : 18;  // End at 3PM on Saturdays, 6PM other days
         
@@ -175,10 +180,49 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('change', updateBookingSummary);
     });
     
-    // Form validation
+    // Initialize Stripe Elements
+    async function initializeStripe() {
+        try {
+            const appearance = {
+                theme: 'stripe',
+                variables: {
+                    colorPrimary: '#8368A8',
+                    colorBackground: '#ffffff',
+                    colorText: '#333333',
+                    colorDanger: '#ef4444',
+                    fontFamily: 'Poppins, system-ui, sans-serif',
+                    borderRadius: '8px',
+                    spacingUnit: '4px'
+                }
+            };
+
+            // Create Elements instance
+            elements = stripe.elements({ appearance });
+
+            // Create and mount the Payment Element
+            paymentElement = elements.create('payment', {
+                layout: {
+                    type: 'tabs',
+                    defaultCollapsed: false
+                }
+            });
+            
+            const paymentElementContainer = document.getElementById('payment-element');
+            if (paymentElementContainer) {
+                paymentElement.mount('#payment-element');
+                console.log('Payment element mounted successfully');
+            } else {
+                console.error('Payment element container not found');
+            }
+        } catch (error) {
+            console.error('Error initializing Stripe:', error);
+        }
+    }
+    
+    // Form validation and submission
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
+        bookingForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form inputs
@@ -225,15 +269,74 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (valid) {
-                // Hide form
-                bookingForm.classList.add('hidden');
-                
-                // Show confirmation message
-                const confirmationMessage = document.getElementById('confirmation-message');
-                if (confirmationMessage) {
-                    confirmationMessage.classList.remove('hidden');
-                    confirmationMessage.classList.add('show');
-                    confirmationMessage.scrollIntoView({ behavior: 'smooth' });
+                // Show loading state
+                const submitButton = document.getElementById('submit-button');
+                const buttonText = document.getElementById('button-text');
+                const spinner = document.getElementById('spinner');
+                const paymentMessage = document.getElementById('payment-message');
+
+                submitButton.disabled = true;
+                buttonText.classList.add('hidden');
+                spinner.classList.remove('hidden');
+                paymentMessage.classList.add('hidden');
+
+                try {
+                    // Get selected psychologist type
+                    const psychologistType = document.querySelector('input[name="psychologist-type"]:checked');
+                    
+                    // Create the booking
+                    const response = await fetch('/api/bookings', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: fullName.value,
+                            email: email.value,
+                            phone: phone.value,
+                            date: selectedDate,
+                            time: selectedTimeSlot,
+                            type: psychologistType.dataset.label,
+                            price: psychologistType.dataset.price
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to create booking');
+                    }
+
+                    const { clientSecret } = await response.json();
+
+                    // Handle payment
+                    const { error } = await stripe.confirmPayment({
+                        elements,
+                        confirmParams: {
+                            return_url: `${window.location.origin}/pages/booking-confirmation.html`,
+                            payment_method_data: {
+                                billing_details: {
+                                    name: fullName.value,
+                                    email: email.value,
+                                    phone: phone.value
+                                }
+                            }
+                        }
+                    });
+
+                    if (error) {
+                        throw error;
+                    }
+
+                    // If we get here, the payment is processing or succeeded
+                    // The customer will be redirected to the return_url
+                } catch (error) {
+                    console.error('Error:', error);
+                    paymentMessage.textContent = error.message || 'An error occurred while processing your request.';
+                    paymentMessage.classList.remove('hidden');
+                    
+                    // Reset button state
+                    submitButton.disabled = false;
+                    buttonText.classList.remove('hidden');
+                    spinner.classList.add('hidden');
                 }
             }
         });
