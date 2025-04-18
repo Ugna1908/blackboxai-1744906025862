@@ -163,8 +163,20 @@
                                 <input type="tel" id="phone" class="form-input" placeholder="Enter your phone number">
                             </div>
                             
+                            <!-- Payment Element -->
+                            <div class="mb-6">
+                                <label class="block text-lg font-medium mb-2">Payment Details</label>
+                                <div id="payment-element" class="border-2 border-gray-300 p-4 rounded-lg bg-white"></div>
+                                <div id="payment-message" class="hidden mt-2 text-sm text-red-600"></div>
+                            </div>
+
                             <!-- Submit Button -->
-                            <button type="submit" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition w-full">Book Now</button>
+                            <button type="submit" id="submit-button" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition w-full">
+                                <span id="button-text">Pay & Book Now</span>
+                                <span id="spinner" class="hidden">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
                         </form>
                         
                         <!-- Confirmation Message (Initially Hidden) -->
@@ -295,6 +307,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="../js/script.js"></script>
     <script src="../js/booking.js"></script>
 </body>
