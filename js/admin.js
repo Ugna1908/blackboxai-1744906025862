@@ -54,9 +54,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmAction = document.getElementById('confirm-action');
     
     // Data Storage
-    let availableTimings = JSON.parse(localStorage.getItem('availableTimings')) || [];
-    let leads = JSON.parse(localStorage.getItem('leads')) || [];
-    let recentActivity = JSON.parse(localStorage.getItem('recentActivity')) || [];
+    let availableTimings = [];
+    let leads = [];
+    let recentActivity = [];
+
+    // Fetch bookings from server
+    async function fetchBookings() {
+        try {
+            const response = await fetch('/api/bookings');
+            if (!response.ok) {
+                throw new Error('Failed to fetch bookings');
+            }
+            leads = await response.json();
+            loadLeads();
+            updateDashboardStats();
+        } catch (error) {
+            console.error('Error fetching bookings:', error);
+        }
+    }
     
     // Initialize date input min value to today
     const today = new Date().toISOString().split('T')[0];
@@ -883,40 +898,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Confirm lead
-    function confirmLead(leadId) {
-        const lead = leads.find(l => l.id === leadId);
-        
-        if (!lead) return;
-        
-        // Update lead status
-        lead.status = 'confirmed';
-        
-        // Save to local storage
-        localStorage.setItem('leads', JSON.stringify(leads));
-        
-        // Add activity
-        addActivity(
-            'lead_confirmed',
-            'Booking confirmed',
-            `Confirmed booking for ${lead.name} on ${formatDate(lead.date)} at ${lead.time}`
-        );
-        
-        // Mark corresponding time slot as booked
-        const timeSlot = availableTimings.find(timing => 
-            timing.date === lead.date && 
-            timing.startTime === lead.time
-        );
-        
-        if (timeSlot) {
-            timeSlot.status = 'booked';
-            localStorage.setItem('availableTimings', JSON.stringify(availableTimings));
+    async function confirmLead(leadId) {
+        try {
+            const response = await fetch(`/api/bookings/${leadId}/confirm`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to confirm booking');
+            }
+
+            const { booking } = await response.json();
+            
+            // Add activity
+            addActivity(
+                'lead_confirmed',
+                'Booking confirmed',
+                `Confirmed booking for ${booking.name} on ${formatDate(booking.date)} at ${booking.time}`
+            );
+            
+            // Refresh bookings
+            await fetchBookings();
+            
+            // Update dashboard stats
+            updateDashboardStats();
+        } catch (error) {
+            console.error('Error confirming booking:', error);
+            alert('Failed to confirm booking. Please try again.');
         }
-        
-        // Reload leads table
-        loadLeads();
-        
-        // Update dashboard stats
-        updateDashboardStats();
     }
     
     // Open reject confirmation
@@ -940,29 +952,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Reject lead
-    function rejectLead(leadId) {
-        const lead = leads.find(l => l.id === leadId);
-        
-        if (!lead) return;
-        
-        // Update lead status
-        lead.status = 'rejected';
-        
-        // Save to local storage
-        localStorage.setItem('leads', JSON.stringify(leads));
-        
-        // Add activity
-        addActivity(
-            'lead_rejected',
-            'Booking rejected',
-            `Rejected booking for ${lead.name} on ${formatDate(lead.date)} at ${lead.time}`
-        );
-        
-        // Reload leads table
-        loadLeads();
-        
-        // Update dashboard stats
-        updateDashboardStats();
+    async function rejectLead(leadId) {
+        try {
+            const response = await fetch(`/api/bookings/${leadId}/reject`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to reject booking');
+            }
+
+            const { booking } = await response.json();
+            
+            // Add activity
+            addActivity(
+                'lead_rejected',
+                'Booking rejected',
+                `Rejected booking for ${booking.name} on ${formatDate(booking.date)} at ${booking.time}`
+            );
+            
+            // Refresh bookings
+            await fetchBookings();
+            
+            // Update dashboard stats
+            updateDashboardStats();
+        } catch (error) {
+            console.error('Error rejecting booking:', error);
+            alert('Failed to reject booking. Please try again.');
+        }
     }
     
     // Handle close lead details modal
