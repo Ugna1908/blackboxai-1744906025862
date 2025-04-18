@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | The Friendly Couch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8368A8', // Purple color from the original site
+                        secondary: '#F9A826', // Accent color
+                        dark: '#333333',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col">
+    <!-- Login Section (initially visible) -->
+    <section id="login-section" class="flex items-center justify-center min-h-screen w-full">
+        <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+            <div class="text-center mb-8">
+                <a href="../index.html" class="inline-block mb-6">
+                    <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-14 mx-auto">
+                </a>
+                <h1 class="text-2xl font-bold text-primary">Admin Dashboard</h1>
+                <p class="text-gray-600 mt-2">Please log in to access the admin area</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <label for="username" class="block text-lg font-medium mb-2">Username</label>
+                    <input type="text" id="username" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your username">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-lg font-medium mb-2">Password</label>
+                    <input type="password" id="password" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" placeholder="Enter your password">
+                </div>
+                
+                <div id="login-error" class="hidden text-red-500 text-center font-medium"></div>
+                
+                <button id="login-button" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary transition w-full">Login</button>
+                
+                <div class="text-center text-sm text-gray-500">
+                    <p>Demo credentials: username: <strong>admin</strong>, password: <strong>admin123</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard (initially hidden) -->
+    <div id="admin-dashboard" class="hidden flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-md py-4 px-6">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="../images/logo.svg" alt="The Friendly Couch Logo" class="h-10">
+                    <h1 class="ml-4 text-2xl font-bold text-primary">Admin Dashboard</h1>
+                </div>
+                <button id="logout-btn" class="flex items-center gap-2 text-gray-600 hover:text-primary transition">
+                    <span>Logout</span>
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="flex flex-1">
+            <!-- Sidebar -->
+            <aside class="w-64 bg-white shadow-md p-6 hidden md:block">
+                <nav class="mt-8 space-y-2">
+                    <a href="#dashboard" id="dashboard-link" class="nav-link flex items-center gap-3 p-3 rounded-lg bg-primary bg-opacity-10 text-primary font-medium hover:bg-opacity-20 transition">
+                        <i class="fas fa-tachometer-alt w-5 text-center"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#manage-timings" id="timings-link" class="nav-link flex items-center gap-3 p-3 rounded-lg font-medium hover:bg-primary hover:bg-opacity-10 transition">
+                        <i class="fas fa-clock w-5 text-center"></i>
+                        <span>Manage Timings</span>
+                    </a>
+                    <a href="#leads-confirmation" id="leads-link" class="nav-link flex items-center gap-3 p-3 rounded-lg font-medium hover:bg-primary hover:bg-opacity-10 transition">
+                        <i class="fas fa-user-check w-5 text-center"></i>
+                        <span>Leads Confirmation</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden bg-white w-full shadow-sm sticky top-0 z-10">
+                <div class="flex p-4 overflow-x-auto no-scrollbar">
+                    <a href="#dashboard" id="mobile-dashboard-link" class="nav-link whitespace-nowrap px-4 py-2 rounded-full bg-primary text-white font-medium mr-3">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+                    </a>
+                    <a href="#manage-timings" id="mobile-timings-link" class="nav-link whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 font-medium mr-3">
+                        <i class="fas fa-clock mr-2"></i>Manage Timings
+                    </a>
+                    <a href="#leads-confirmation" id="mobile-leads-link" class="nav-link whitespace-nowrap px-4 py-2 rounded-full bg-gray-200 font-medium">
+                        <i class="fas fa-user-check mr-2"></i>Leads Confirmation
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 p-6">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="tab-content">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold mb-2">Welcome to The Friendly Couch Admin</h2>
+                        <p class="text-gray-600">Manage your appointment timings and lead confirmations</p>
+                    </div>
+
+                    <!-- Stats Overview -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-medium">Total Bookings</h3>
+                                <div class="rounded-full bg-blue-100 p-3">
+                                    <i class="fas fa-calendar-check text-blue-500"></i>
+                                </div>
+                            </div>
+                            <p class="text-3xl font-bold" id="total-bookings">0</p>
+                            <p class="text-sm text-gray-500 mt-2">Across all time</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-medium">Pending Leads</h3>
+                                <div class="rounded-full bg-yellow-100 p-3">
+                                    <i class="fas fa-user-clock text-yellow-500"></i>
+                                </div>
+                            </div>
+                            <p class="text-3xl font-bold" id="pending-leads">0</p>
+                            <p class="text-sm text-gray-500 mt-2">Awaiting confirmation</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-medium">Available Slots</h3>
+                                <div class="rounded-full bg-green-100 p-3">
+                                    <i class="fas fa-clock text-green-500"></i>
+                                </div>
+                            </div>
+                            <p class="text-3xl font-bold" id="available-slots">0</p>
+                            <p class="text-sm text-gray-500 mt-2">Currently available</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-10">
+                        <h3 class="text-xl font-medium mb-4">Quick Actions</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <a href="#manage-timings" class="quick-action-link bg-primary bg-opacity-10 hover:bg-opacity-20 p-4 rounded-lg flex items-center">
+                                <div class="rounded-full bg-primary bg-opacity-20 p-3 mr-4">
+                                    <i class="fas fa-plus text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-primary">Add New Time Slot</h4>
+                                    <p class="text-sm text-gray-600">Create available time slots</p>
+                                </div>
+                            </a>
+                            <a href="#leads-confirmation" class="quick-action-link bg-primary bg-opacity-10 hover:bg-opacity-20 p-4 rounded-lg flex items-center">
+                                <div class="rounded-full bg-primary bg-opacity-20 p-3 mr-4">
+                                    <i class="fas fa-check text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-primary">Confirm Leads</h4>
+                                    <p class="text-sm text-gray-600">Review and confirm bookings</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-medium mb-4">Recent Activity</h3>
+                        <div class="overflow-hidden">
+                            <ul class="space-y-4" id="recent-activity">
+                                <li class="text-gray-500 text-center py-4">No recent activity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Manage Timings Section -->
+                <section id="manage-timings-section" class="tab-content hidden">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold mb-2">Manage Available Timings</h2>
+                        <p class="text-gray-600">Add, edit, or remove available time slots for appointments</p>
+                    </div>
+
+                    <!-- Add New Timing Form -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <h3 class="text-xl font-medium mb-4">Add New Time Slot</h3>
+                        <form id="add-timing-form" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <label for="date" class="block text-sm font-medium mb-2">Date</label>
+                                    <input type="date" id="date" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" min="">
+                                </div>
+                                <div>
+                                    <label for="start-time" class="block text-sm font-medium mb-2">Start Time</label>
+                                    <input type="time" id="start-time" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full">
+                                </div>
+                                <div>
+                                    <label for="end-time" class="block text-sm font-medium mb-2">End Time</label>
+                                    <input type="time" id="end-time" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full">
+                                </div>
+                            </div>
+                            <div id="add-timing-error" class="text-red-500 text-sm hidden"></div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition">
+                                    <i class="fas fa-plus mr-2"></i>Add Time Slot
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Current Timings Table -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-medium">Available Time Slots</h3>
+                            <div class="flex items-center gap-2">
+                                <select id="filter-date" class="border-2 border-gray-300 p-2 rounded-lg text-sm">
+                                    <option value="all">All Dates</option>
+                                    <!-- Dates will be populated by JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white">
+                                <thead class="bg-gray-50 text-left">
+                                    <tr>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Date</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Time Slot</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Status</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="timings-table-body">
+                                    <tr>
+                                        <td colspan="4" class="py-4 px-4 text-center text-gray-500">No time slots added yet</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Leads Confirmation Section -->
+                <section id="leads-confirmation-section" class="tab-content hidden">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold mb-2">Leads Confirmation</h2>
+                        <p class="text-gray-600">Review and confirm booking requests from potential clients</p>
+                    </div>
+
+                    <!-- Leads Filter Controls -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <div class="flex flex-wrap items-center gap-4 justify-between">
+                            <h3 class="text-xl font-medium">Booking Requests</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <select id="filter-status" class="border-2 border-gray-300 p-2 rounded-lg text-sm">
+                                    <option value="all">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="confirmed">Confirmed</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
+                                <input type="text" id="search-leads" placeholder="Search by name or email" class="border-2 border-gray-300 p-2 rounded-lg text-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leads Table -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white">
+                                <thead class="bg-gray-50 text-left">
+                                    <tr>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Name</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Contact</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Date & Time</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Type</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Status</th>
+                                        <th class="py-3 px-4 text-sm font-medium text-gray-600">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leads-table-body">
+                                    <tr>
+                                        <td colspan="6" class="py-4 px-4 text-center text-gray-500">No booking requests found</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-white py-4 px-6 shadow-md mt-auto">
+            <div class="container mx-auto text-center text-gray-600">
+                <p>&copy; 2023 The Friendly Couch. Admin Dashboard.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for Editing Time Slot -->
+    <div id="edit-timing-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Edit Time Slot</h3>
+                <button id="close-edit-modal" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="edit-timing-form" class="space-y-4">
+                <input type="hidden" id="edit-timing-id">
+                <div>
+                    <label for="edit-date" class="block text-sm font-medium mb-2">Date</label>
+                    <input type="date" id="edit-date" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full">
+                </div>
+                <div>
+                    <label for="edit-start-time" class="block text-sm font-medium mb-2">Start Time</label>
+                    <input type="time" id="edit-start-time" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full">
+                </div>
+                <div>
+                    <label for="edit-end-time" class="block text-sm font-medium mb-2">End Time</label>
+                    <input type="time" id="edit-end-time" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full">
+                </div>
+                <div id="edit-timing-error" class="text-red-500 text-sm hidden"></div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="cancel-edit" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition">
+                        Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Lead Details -->
+    <div id="lead-details-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Booking Request Details</h3>
+                <button id="close-lead-modal" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="lead-details-content" class="space-y-4">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            <div class="flex justify-end space-x-3 mt-6">
+                <button type="button" id="close-lead-details" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition">
+                    Close
+                </button>
+                <button type="button" id="confirm-lead" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition hidden">
+                    Confirm Booking
+                </button>
+                <button type="button" id="reject-lead" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition hidden">
+                    Reject Booking
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <div class="text-center mb-6">
+                <div class="text-red-500 mb-4">
+                    <i class="fas fa-exclamation-triangle text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold" id="confirmation-title">Are you sure?</h3>
+                <p class="text-gray-600 mt-2" id="confirmation-message">This action cannot be undone.</p>
+            </div>
+            <div class="flex justify-center space-x-3">
+                <button type="button" id="cancel-confirmation" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition">
+                    Cancel
+                </button>
+                <button type="button" id="confirm-action" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition">
+                    Yes, proceed
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
