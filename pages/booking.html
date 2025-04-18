@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Pikaday CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <script>
@@ -19,8 +22,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#8368A8', // Purple color from the original site
-                        secondary: '#F9A826', // Accent color
+                        primary: '#8368A8',
+                        secondary: '#F9A826',
                         dark: '#333333',
                         light: '#F5F5F5'
                     },
@@ -31,6 +34,25 @@
             }
         }
     </script>
+    <style>
+        .pika-single {
+            z-index: 9999;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+        }
+        .pika-button {
+            border-radius: 0.25rem;
+        }
+        .is-selected .pika-button {
+            background: #8368A8;
+            box-shadow: none;
+        }
+        .is-today .pika-button {
+            color: #F9A826;
+        }
+    </style>
 </head>
 <body class="font-sans bg-white text-dark">
     <!-- Header & Navigation -->
@@ -90,13 +112,17 @@
                     <!-- Date Picker -->
                     <div class="mb-8">
                         <label for="appointment-date" class="block text-lg font-medium mb-2">Select a Date</label>
-                        <input type="date" id="appointment-date" class="form-input border-2 border-gray-300 p-3 rounded-lg w-full" min="" required>
+                        <input type="text" 
+                            id="appointment-date" 
+                            class="form-input border-2 border-gray-300 p-3 rounded-lg w-full cursor-pointer" 
+                            placeholder="Click to select a date"
+                            readonly>
                     </div>
                     
                     <!-- Time Slots -->
                     <div id="time-slots-container" class="mb-8 hidden">
                         <h3 class="text-xl font-medium mb-4">Select a Time</h3>
-                        <div id="time-slots" class="grid grid-cols-2 gap-3"></div>
+                        <div id="time-slots" class="grid grid-cols-2 gap-4 mt-4 px-2 bg-gray-50 p-6 rounded-lg"></div>
                     </div>
                     
                     <!-- Booking Form -->
