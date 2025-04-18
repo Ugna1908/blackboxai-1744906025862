@@ -8,47 +8,45 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (datePickerElement) {
         console.log('Found date picker element');
-        
-        // Set minimum date to today
-        const today = new Date().toISOString().split('T')[0];
-        datePickerElement.min = today;
-        
-        // Add change event listener
-        datePickerElement.addEventListener('change', function(e) {
-            const selectedDateValue = e.target.value;
-            console.log('Date selected:', selectedDateValue);
-            
-            // Check if selected date is a Sunday
-            const selectedDay = new Date(selectedDateValue).getDay();
-            if (selectedDay === 0) {
-                alert('Sundays are not available for booking. Please select another date.');
-                e.target.value = '';
-                return;
-            }
-            
-            selectedDate = selectedDateValue;
-            updateAvailableTimeSlots(selectedDateValue);
-            
-            // Show time slots container
-            const timeSlotsContainer = document.getElementById('time-slots-container');
-            if (timeSlotsContainer) {
-                timeSlotsContainer.classList.remove('hidden');
-            }
-            
-            // Reset selected time slot
-            selectedTimeSlot = null;
-            
-            // Hide booking form if it was visible
-            const bookingFormContainer = document.getElementById('booking-form-container');
-            if (bookingFormContainer) {
-                bookingFormContainer.classList.add('hidden');
-            }
-            
-            // Update summary
-            updateBookingSummary();
-        });
-        
-        console.log('Date picker initialized successfully');
+        try {
+            // Initialize Pikaday
+            const picker = new Pikaday({
+                field: datePickerElement,
+                format: 'YYYY-MM-DD',
+                minDate: new Date(),
+                disableDayFn: function(date) {
+                    // Disable Sundays (0 is Sunday)
+                    return date.getDay() === 0;
+                },
+                onSelect: function(date) {
+                    const dateStr = this.toString('YYYY-MM-DD');
+                    console.log('Date selected:', dateStr);
+                    selectedDate = dateStr;
+                    updateAvailableTimeSlots(dateStr);
+                    
+                    // Show time slots container
+                    const timeSlotsContainer = document.getElementById('time-slots-container');
+                    if (timeSlotsContainer) {
+                        timeSlotsContainer.classList.remove('hidden');
+                    }
+                    
+                    // Reset selected time slot
+                    selectedTimeSlot = null;
+                    
+                    // Hide booking form if it was visible
+                    const bookingFormContainer = document.getElementById('booking-form-container');
+                    if (bookingFormContainer) {
+                        bookingFormContainer.classList.add('hidden');
+                    }
+                    
+                    // Update summary
+                    updateBookingSummary();
+                }
+            });
+            console.log('Date picker initialized successfully');
+        } catch (error) {
+            console.error('Error initializing date picker:', error);
+        }
     } else {
         console.error('Date picker element not found');
     }
@@ -68,7 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add time slots to container
         timeSlots.forEach(slot => {
             const slotElement = document.createElement('div');
-            slotElement.className = `time-slot ${slot.available ? '' : 'unavailable'} p-3 rounded-lg border-2 text-center cursor-pointer mb-2`;
+            slotElement.className = `time-slot ${
+                slot.available 
+                    ? 'hover:bg-primary hover:text-white hover:border-primary bg-white' 
+                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            } p-4 rounded-lg border-2 border-gray-200 text-center cursor-pointer mb-3 transition-all duration-200 text-lg font-medium shadow-sm hover:shadow-md`;
             slotElement.textContent = slot.time;
             slotElement.dataset.time = slot.time;
             slotElement.dataset.available = slot.available;
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                     
                     // Add selected class to clicked time slot
-                    this.classList.add('selected', 'bg-primary', 'text-white');
+                    this.classList.add('selected', 'bg-primary', 'text-white', 'border-primary', 'shadow-lg', 'scale-105');
                     
                     // Store selected time slot
                     selectedTimeSlot = this.dataset.time;
@@ -111,15 +113,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const endHour = (selectedDay === 6) ? 15 : 18;  // End at 3PM on Saturdays, 6PM other days
         
         for (let hour = startHour; hour < endHour; hour++) {
+            const period = hour >= 12 ? 'PM' : 'AM';
+            let displayHour = hour > 12 ? hour - 12 : hour;
+            // Handle 12 PM and 12 AM cases
+            if (hour === 0) displayHour = 12;
+            if (hour === 12) displayHour = 12;
+            
             // Add full hour slot
             slots.push({
-                time: `${hour}:00`,
+                time: `${displayHour}:00 ${period}`,
                 available: Math.random() > 0.3 // 70% chance of being available
             });
             
             // Add half hour slot
             slots.push({
-                time: `${hour}:30`,
+                time: `${displayHour}:30 ${period}`,
                 available: Math.random() > 0.3 // 70% chance of being available
             });
         }
